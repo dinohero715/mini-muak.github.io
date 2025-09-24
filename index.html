@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini-Muak 0.2.0</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <h1>Mini-Muak 🚀</h1>
+
+    <!-- Formulario de publicación -->
+    <input type="text" id="postText" placeholder="Lanza tu Muak 🚀...">
+    <select id="community">
+      <option value="General">General</option>
+      <option value="Gaming">Gaming</option>
+      <option value="Arte">Arte</option>
+    </select>
+    <button onclick="createPost()">Publicar</button>
+
+    <!-- Botón para reiniciar todo -->
+    <button onclick="resetApp()" class="reset-button">
+      🔄 Reiniciar Mini-Muak
+    </button>
+
+    <!-- Mini-perfil -->
+    <div id="miniProfile"></div>
+
+    <!-- Contador de posts totales -->
+    <p id="postCount">Total de Muaks: 0</p>
+
+    <!-- Filtro de comunidades -->
+    <h3>Filtrar por comunidad:</h3>
+    <select id="filterCommunity" onchange="renderPosts()">
+      <option value="Todas">Todas</option>
+      <option value="General">General</option>
+      <option value="Gaming">Gaming</option>
+      <option value="Arte">Arte</option>
+    </select>
+
+    <!-- Ordenar feed -->
+    <h3>Ordenar por:</h3>
+    <select id="sortBy" onchange="renderPosts()">
+      <option value="recientes">Más recientes</option>
+      <option value="populares">Más populares</option>
+    </select>
+
+    <!-- Feed -->
+    <div id="feed"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
